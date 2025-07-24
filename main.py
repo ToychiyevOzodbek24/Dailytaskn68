@@ -1,4 +1,5 @@
 from apps.tasks.task import *
+from apps.utils.auth import *
 from core.tables import create_tables
 
 
@@ -12,11 +13,14 @@ def auth_menu():
     choice = input("Enter your choice: ")
 
     if choice == "1":
-        pass
+        register()
     elif choice == "2":
-        pass
+        login()
     elif choice == "3":
-        pass
+        print("Dasturdan chiqildi.")
+        return None
+    else:
+        print("Noto‘g‘ri tanlov.")
     return auth_menu()
 
 
@@ -43,7 +47,7 @@ def main_menu():
     elif choice == "5":
         clear_day()
     elif choice == "6":
-        pass
+        auth_menu()
     else:
         main_menu()
     return main_menu()
@@ -51,4 +55,4 @@ def main_menu():
 
 if __name__ == '__main__':
     create_tables()
-    main_menu()
+    auth_menu()
