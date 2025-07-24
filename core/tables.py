@@ -1,4 +1,5 @@
-cd import psycopg2
+
+import psycopg2
 from psycopg2.extras import DictCursor
 
 from core.database import get_db_conn
